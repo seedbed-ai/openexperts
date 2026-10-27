@@ -950,6 +950,21 @@ Frameworks may:
 
 The strategy should consider context budget and file size.
 
+### Progressive Navigation (OpenExperts 1.0 additive conventions)
+
+OpenExperts expert packages MAY publish a compact `knowledge/INDEX.md` topic map linked from their package documentation or `expert.yaml` `components.knowledge` list. A repository MAY also publish a small `CATALOG.md` directory of specialties and pointers to actual package manifests. These are ordinary Markdown files within the existing OpenExperts conventions, not a new standard, mandatory registry, or alternate manifest.
+
+A useful index entry identifies its topic/scope, a one-sentence routing description, the **relative target document and heading anchor**, relevant prerequisites, and related or deeper paths where useful. Prefer index hierarchies for large libraries; avoid giant filename inventories. Anchors and paths are hints to be checked against actual target content at the observed revision. Index summaries are **not a substitute for primary content**.
+
+Consumers SHOULD:
+1. Select a specialty/package from a small catalog or accessible manifest list.
+2. Read an appropriate topic index and choose the most relevant linked section.
+3. Fetch the **smallest reliable selected section** (or selected document if section reads are not dependable); follow references progressively as new questions/gaps arise.
+4. Report path, section and observed version; distinguish read text from indexes/snippets and qualify unsupported claims.
+5. Never require bulk package/library download or exhaustive “task completeness” as an upfront condition.
+
+Published knowledge stays at its original accessible host. Customer-owned durable task state is separate and need not mirror that knowledge.
+
 ## 10. State (`state/*.md`)
 
 State files are builder-defined markdown templates for local read/write storage. The expert builder decides what state the expert tracks, what structure it uses, and how the agent should interact with it. The agent reads from and writes to these files at runtime.
