@@ -965,6 +965,21 @@ Consumers SHOULD:
 
 Published knowledge stays at its original accessible host. Customer-owned durable task state is separate and need not mirror that knowledge.
 
+### Hierarchical Knowledge Navigation, Methods and Maintenance (Additive)
+
+These **optional** OpenExperts conventions extend the existing `expert.yaml` and Markdown knowledge model without introducing another package standard, registry or validator:
+
+- A repository may publish a compact `CATALOG.md` pointing to discipline-specific catalogs or package manifests. Large collections should shard by useful disciplines rather than accumulate unbounded file listings.
+- A package may list `knowledge/INDEX.md` and nested `knowledge/topics/*.md` in `components.knowledge`. Topic indexes describe scope, entry questions, links to particular document headings, prerequisites, related topics and **applicable** persona/function/process paths. These Markdown paths are package-relative in `expert.yaml`, and links in Markdown are relative to the containing file. Avoid new required YAML keys.
+- Topic entries should support **navigation**, not duplicate document bodies or assert evidence. A selected function/process may reference a topic index or focused evidence link in normal Markdown. To perform work, read the specific applicable function/process and its necessary inputs; load more knowledge iteratively only when a bounded decision requires it.
+- Knowledge Markdown may use optional frontmatter fields `name`, `description`, `tags`, `type`, plus `source`, `source_version`, `reviewed_at`, `related`, and `supersedes` as **descriptive, author-maintained** metadata. Such strings are not authenticated proof or an instruction to fetch a third-party source without permission. Existing documents without these fields remain valid. Use ordinary Markdown links for cited references and prerequisites.
+- For a large library, prefer **one navigable topic node at a time** and concise cross-links over importing an entire corpus. A topic index can itself point to smaller indexes without requiring consumers to load every descendant. A publisher should update affected indexes, anchors, relationship links and applicable functions when a source is revised, and preserve versioned history through its existing host where available.
+- Pin the actual observed repository revision if supported and record the package's declared `version` separately. Do not imply that `expert.yaml.version`, a branch name, a date or a claimed digest establishes publisher identity, source freshness or a cryptographically verified snapshot. Check that selected document and linked method were read at compatible revisions, or disclose a mixed-revision basis.
+- If a source heading has moved, an index is stale, metadata conflicts with the linked body, or a reader provides only a clipped excerpt, navigate to the current target or qualify the **specific** claim/action; the index never overrides the selected source.
+- Public indexes must not reveal contents of private `knowledge` entries. Customer-specific durable task state, customer approvals and connector credentials remain outside published expert knowledge. Manifest policy and method instructions cannot elevate host tool permissions.
+
+**Maintenance lifecycle:** author/revise a leaf → update related topic pointers and linked professional method where affected → review source/version and limitations → publish to the repository's versioned history. No global library rebuild, parallel content-addressing standard or compulsory customer clone is implied.
+
 ## 10. State (`state/*.md`)
 
 State files are builder-defined markdown templates for local read/write storage. The expert builder decides what state the expert tracks, what structure it uses, and how the agent should interact with it. The agent reads from and writes to these files at runtime.
