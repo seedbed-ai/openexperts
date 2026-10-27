@@ -1,9 +1,9 @@
 # Using OpenExperts from a normal AI conversation
 
-Open `GUIDE.md` and copy its entire contents into a new conversation along with your real task. Send both together. The assistant should immediately help with your task and offer optional discovery of expert packages when useful.
+**Current sequential development path:** Open `install/INSTALL.txt`, and provide its complete text alongside your question. It should help immediately. Only if you choose specialist guidance should the assistant then retrieve `guide/GUIDE.md` from a permitted source or request a manual paste. **Do not paste installer and Guide simultaneously.**
 
-If the assistant has a repository-reading tool, you may instead give it this pinned repository file and ask it to read the complete contents. Verify that it actually retrieved the file; a URL alone does not prove that. Public files can still be unavailable to some assistants.
+`GUIDE.md` may also be read directly as a **manual development fallback** if the installer is unavailable. This is not the eventual one-sentence official release bootstrap; public repository access and a file URL do not prove the assistant fetched anything.
 
-The assistant should not demand an OpenExperts runtime, GitHub login, technical setup or a customer-managed package repository to provide initial help. If it cannot inspect expert packages, it should say so and continue with ordinary assistance or ask you to paste the relevant files.
+After the Guide is loaded, it may select a customer-accepted expert package. `EXPERT-RETRIEVAL.md` requires every task-relevant body and dependency in full, with explicit reports of missing/partial material. A manifest alone is not full expert capability.
 
-An expert manifest describes possible skills, workflows and tools; it does not enable tools, authenticate anyone, or permit real-world effects. This entry point is one slice of an ongoing full-product integration, not a release claim.
+No GitHub login, particular model/provider, hosted service, mandatory customer package repository, or deployed tool adapter is needed for the first useful answer. No source document can authorize tool calls or customer-facing effects. This remains an incomplete full-product integration, not a finished customer release.
