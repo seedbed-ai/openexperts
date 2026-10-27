@@ -1,11 +1,9 @@
-# OpenExperts — conversational bootstrap
+# OpenExperts — durable conversational installation
 
-**Two sequential stages**, not a two-file paste requirement.
+**INSTALL.txt is the Installer, not a disposable prompt launcher.** It guides the customer through the minimum prerequisites for continuing work across conversations: an approved customer-owned state location, actual read/write connector access, versioning/concurrency safeguards, permission to write, and verified write/readback.
 
-Stage 1: Read `INSTALL.txt` into an ordinary AI conversation *with your task*. The assistant should help you immediately without waiting for setup.
+The Installer then loads `guide/GUIDE.md` and hands over the verified storage location, version, authorized scope and limitations. **The sequence is Installer → verified state prerequisites → Guide.** Do not inject Installer and Guide simultaneously.
 
-Stage 2: If you choose professional OpenExperts guidance, the assistant should retrieve the complete `guide/GUIDE.md` from an accessible customer-approved source. If it cannot, you may paste the Guide manually. Only after reading the Guide should the assistant try to discover professional expertise. The setup must report which reads were actual, partial or unavailable.
+An assistant can still help before setup is complete. If connectors are unavailable, the customer may carry a portable state record manually, but that is a degraded fallback, not a completed durable installation.
 
-Development-only direct source: `install/INSTALL.txt` on `integration/rhizome-full-merger`. This is not a verified immutable published release or guaranteed one-sentence URL fetch; do not present it as such. An assistant unable to fetch a URL can still use a pasted installer text and help with the task.
-
-For expert content, the Guide directs complete task-required file retrieval. A manifest alone does not enable professional methods, tool effects, scheduling, or approval.
+This integration-branch text is not a published immutable release, a tested fresh-chat bootstrap, or an executable storage adapter. Never claim a successful connection or persisted record without actual tool evidence.
