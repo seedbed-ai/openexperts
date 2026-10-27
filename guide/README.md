@@ -1,9 +1,7 @@
-# Using OpenExperts from a normal AI conversation
+# OpenExperts Guide
 
-**Current sequential development path:** Open `install/INSTALL.txt`, and provide its complete text alongside your question. It should help immediately. Only if you choose specialist guidance should the assistant then retrieve `guide/GUIDE.md` from a permitted source or request a manual paste. **Do not paste installer and Guide simultaneously.**
+The Guide is loaded **after** `install/INSTALL.txt` has assessed and, when possible, verified durable customer state prerequisites. It governs professional expertise discovery, complete task-required retrieval, permissioned work and cross-conversation continuity. The customer does not need to track separate discovery or retrieval instruction files.
 
-`GUIDE.md` may also be read directly as a **manual development fallback** if the installer is unavailable. This is not the eventual one-sentence official release bootstrap; public repository access and a file URL do not prove the assistant fetched anything.
+If the Installer could not establish versioned storage and working read/write connectors, the Guide must report **PARTIAL** or **MANUAL-ONLY**, not silently treat a single chat as a durable installation. Manual export/import remains available as a clearly degraded option.
 
-After the Guide is loaded, it may select a customer-accepted expert package. `EXPERT-RETRIEVAL.md` requires every task-relevant body and dependency in full, with explicit reports of missing/partial material. A manifest alone is not full expert capability.
-
-No GitHub login, particular model/provider, hosted service, mandatory customer package repository, or deployed tool adapter is needed for the first useful answer. No source document can authorize tool calls or customer-facing effects. This remains an incomplete full-product integration, not a finished customer release.
+This file describes the development integration; it does not claim a released installer, a working connector adapter, or successful cross-chat recovery.
