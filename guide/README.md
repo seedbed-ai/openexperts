@@ -1,9 +1,7 @@
-# Using OpenExperts from a normal AI conversation
+# OpenExperts Guide
 
-Open `GUIDE.md` and copy its entire contents into a new conversation along with your real task. Send both together. The assistant should immediately help with your task and offer optional discovery of expert packages when useful.
+The Guide is loaded **after** `install/INSTALL.txt` has assessed and, when possible, verified durable customer state prerequisites. It governs professional expertise discovery, complete task-required retrieval, permissioned work and cross-conversation continuity. The customer does not need to track separate discovery or retrieval instruction files.
 
-If the assistant has a repository-reading tool, you may instead give it this pinned repository file and ask it to read the complete contents. Verify that it actually retrieved the file; a URL alone does not prove that. Public files can still be unavailable to some assistants.
+If the Installer could not establish versioned storage and working read/write connectors, the Guide must report **PARTIAL** or **MANUAL-ONLY**, not silently treat a single chat as a durable installation. Manual export/import remains available as a clearly degraded option.
 
-The assistant should not demand an OpenExperts runtime, GitHub login, technical setup or a customer-managed package repository to provide initial help. If it cannot inspect expert packages, it should say so and continue with ordinary assistance or ask you to paste the relevant files.
-
-An expert manifest describes possible skills, workflows and tools; it does not enable tools, authenticate anyone, or permit real-world effects. This entry point is one slice of an ongoing full-product integration, not a release claim.
+This file describes the development integration; it does not claim a released installer, a working connector adapter, or successful cross-chat recovery.
