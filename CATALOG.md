@@ -1,12 +1,14 @@
-# OpenExperts catalog — navigation example
+# OpenExperts expert catalog
 
-This small catalog is a **routing aid**, not the full library, a verified publisher registry, or a substitute for the underlying documents. Repository readers should open only relevant links. This example intentionally does not require a customer to clone or download expertise.
+This compact catalog routes an AI to **specialties and package entry points**. A large collection may maintain smaller discipline catalogs linked from this root; do not expand the root into a giant file list or download a library before selecting expertise.
 
-| Specialty | Appropriate questions | First index / package | Notes |
-| --- | --- | --- | --- |
-| B2B sales qualification | Missing decision-makers, deal risks, next steps, buying process | [Sales topic index](experts/radiant-sales-expert-fixture/knowledge/INDEX.md) | Illustrative OpenExperts fixture; independently inspect selected source |
-| B2B sales workflows | Email triage, response drafting, process prerequisites | [Sales package manifest](experts/radiant-sales-expert-fixture/expert.yaml) | This manifest is only discovery metadata; no tools are installed by reading it |
+| Specialty | Questions / use | Topic entry | Method entry | Publisher scope |
+| --- | --- | --- | --- | --- |
+| B2B sales qualification | Buyer authority, deal risks, approval gaps | [Sales topic index](experts/radiant-sales-expert-fixture/knowledge/INDEX.md) | [Determine next action](experts/radiant-sales-expert-fixture/functions/determine-next-action.md) | Public illustrative fixture |
+| Inbound sales workflow | Classify, draft and triage customer messages | [Sales topic index](experts/radiant-sales-expert-fixture/knowledge/INDEX.md) | [Inbound email triage](experts/radiant-sales-expert-fixture/processes/inbound-email-triage.md) | Public illustrative fixture |
 
-**Navigation:** choose the relevant specialty → read its concise index → read a particular linked section/document → apply or cite the observed contents → navigate deeper if a gap appears.
+**How to navigate:** specialty → package `expert.yaml` as needed → bounded topic index → specific heading/source → relevant function/process/persona → further evidence when needed. Index summaries are navigation hints, **not** proof of underlying claims, tool availability or permissions.
 
-**Source discipline:** relative links here refer to files in the same repository revision as this catalog. Pin a real commit SHA or release tag when possible; a mutable branch is not a fixed version. No claim of document authenticity, currentness, customer authorization, or live connector capability follows from this index.
+**Version/source:** All links refer to paths in this repository at the revision actually read. Record the real commit/release and `expert.yaml.version` separately; do not turn mutable branch names into immutable citations. These entries do not verify publisher identity or correctness. Customer storage is for versioned **work state**, not a mandatory mirror of published knowledge.
+
+**Maintenance:** Before changing a linked topic or method, check that labels, destinations and prerequisites still describe the actual target. Split large discipline catalogs or topic indexes when a reader would need to process unrelated entries. Never add customer-private contents to a public catalog.
