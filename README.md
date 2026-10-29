@@ -128,6 +128,8 @@ openexperts is open source. To create your own expert package:
 3. Package your professional expertise as functions, processes, and knowledge
 4. Open a PR to add your package to the directory above
 
+For the pinned upstream licensing declarations, provenance and unresolved rights questions, see [Upstream licensing provenance](docs/UPSTREAM-LICENSING.md). This reference is not a definitive repository-wide licensing determination.
+
 ## License
 
 MIT
