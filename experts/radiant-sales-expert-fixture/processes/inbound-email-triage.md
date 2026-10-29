@@ -41,11 +41,12 @@ If resuming after a failure, read the scratchpad first and skip any already-comp
 - [ ] Fetch contact details from `crm.get_contact` using sender email and record account context.
 - [ ] Fetch active deal details from `crm.get_deal` and record stage, amount, competitors.
 - [ ] Run `classify-email-intent` function using email body and CRM context; record output.
-- [ ] Run `determine-next-action` function using classification and deal context; record output.
+- [ ] Use the [sales topic index](../knowledge/INDEX.md) to select a narrow qualification or competition leaf only if the classification/deal demands it; read the selected source section and follow the linked function's prerequisites, not the full knowledge directory.
+- [ ] Run `determine-next-action` function using classification and deal context; record output. If required context is missing, produce a qualified draft instead of inventing CRM facts.
 - [ ] Run `compose-response` function using context and action; record draft.
 - [ ] Submit draft via `email.send` (manual — draft only, requires human review).
 - [ ] Log triage summary via `crm.create_note` on the contact record.
-- [ ] Update `state/pipeline.md` with any deal movement or risk changes.
+- [ ] Update the customer-authorized versioned `state/pipeline.md` only if a real writable customer-state location and separate permission are verified; otherwise present an unsaved draft for manual persistence.
 
 ### Completion
 

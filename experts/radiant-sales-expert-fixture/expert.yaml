@@ -95,6 +95,9 @@ components:
     - tools/email.yaml
     - tools/calendar.yaml
   knowledge:
+    - knowledge/INDEX.md
+    - knowledge/topics/qualification.md
+    - knowledge/topics/competition.md
     - knowledge/meddpicc.md
     - knowledge/competitive-battle-cards.md
   state:
