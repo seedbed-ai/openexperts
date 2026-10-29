@@ -1,6 +1,6 @@
 # OpenExperts — durable conversational installation
 
-**INSTALL.txt is the Installer, not a disposable prompt launcher.** It guides the customer through the minimum prerequisites for continuing work across conversations: an approved customer-owned state location, actual read/write connector access, versioning/concurrency safeguards, permission to write, and verified write/readback.
+**INSTALL.txt is the Installer, not a disposable prompt launcher.** It guides the customer through the minimum prerequisites for continuing work across conversations: an approved customer-owned state location, actual read/write connector access, versioning/concurrency safeguards, permission to write, and verified write/readback **and a compact pinned OpenExperts source locator** (full publisher repository URL, observed immutable revision and Installer/Guide/catalog paths). The customer-state repository and published expertise repository are separate.
 
 The Installer then loads `guide/GUIDE.md` and hands over the verified storage location, version, authorized scope and limitations. **The sequence is Installer → verified state prerequisites → Guide.** Do not inject Installer and Guide simultaneously.
 
