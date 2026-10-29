@@ -51,9 +51,7 @@ Only `expert.yaml`, `orchestrator.md`, `functions/`, `persona/`, and `README.md`
 
 For a framework integration, an expert package is a directory of Markdown/YAML files that can be cloned, downloaded or copied into your project. The package contains no executable code; framework features and dependencies are separate. **For the lightweight conversational integration, follow [the Installer](install/INSTALL.txt) and [Guide](guide/GUIDE.md), which navigate published expertise remotely and progressively without requiring a local copy of the full library.**
 
-```bash
-git clone https://github.com/openexperts/radiant-sales-expert
-```
+For a concrete illustration of the package structure, inspect the [in-repository sales-expertise fixture](experts/radiant-sales-expert-fixture/expert.yaml). This is an illustrative fixture, **not** a verified standalone installation or production-ready package.
 
 ### 2. Bind tools if your host supports them
 
@@ -119,7 +117,7 @@ The full specification is in [spec.md](spec.md).
 
 ## Example Packages
 
-- [radiant-sales-expert](https://github.com/openexperts/radiant-sales-expert) -- B2B sales expertise: deal intelligence, next-best-action, content composition, MEDDPICC framework
+- [radiant-sales-expert fixture](experts/radiant-sales-expert-fixture/expert.yaml) -- illustrative B2B sales expertise for deal triage, next-best-action and qualification; not a certified or independently deployed package
 
 ## Contributing
 
