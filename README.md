@@ -131,3 +131,7 @@ openexperts is open source. To create your own expert package:
 ## License
 
 MIT
+
+## Seedbed conversational integration
+
+For the customer-facing principles and tested limits of the lightweight Installer → Guide experience, see [Customer product principles](docs/PRODUCT-PRINCIPLES.md). The expert-package format and optional framework runtime capabilities are described separately in [the specification](spec.md).
