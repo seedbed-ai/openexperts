@@ -1,6 +1,6 @@
 # OpenExperts — proposed technical interoperability notes
 
-**Status:** Independently authored v1 remediation draft. This is a documentation contract for review, not a claim that a compliant runtime or released SDK exists. It replaces the inherited expressive specification while retaining descriptive path and field conventions where necessary for interoperability.
+**Status:** Independently authored core interoperability documentation, accepted within the scoped MIT source-rights review. The GitHub-backed conversational workflow has bounded acceptance evidence, but no v1 release or compliant general-purpose runtime/SDK is claimed. This document replaces inherited expressive specification text while retaining descriptive path and field conventions where needed for interoperability.
 
 ## 1. Two interfaces
 
@@ -58,7 +58,7 @@ A host may optionally map procedure files to tools, event subscriptions, retries
 
 ## 7. Compatibility and verification
 
-The preserved names and fields are interoperability conventions, not a claim of complete compatibility with the inherited upstream 1.0 specification. Integrators should pin a source revision and test their chosen subset. Verification of a GitHub-backed conversational workflow says nothing definitive about other hosts or storage providers. This source set remains under Legal and Product review; no release is authorized.
+The preserved names and fields are interoperability conventions, not a claim of complete compatibility with the inherited upstream 1.0 specification. Integrators should pin a source revision and test their chosen subset. Verification of a GitHub-backed conversational workflow says nothing definitive about other hosts or storage providers. The scoped core licensing remediation received Legal acceptance, and a bounded GitHub-backed authorized state update, independent readback, fresh-chat recovery and source navigation received Product acceptance. These are specific, limited results: unassisted Installer onboarding, refusal/conflict/missing-source drills, other providers, unattended operation and production reliability have not been verified. The documented v1 is not yet an advertised release.
 
 ## 8. Provenance
 
