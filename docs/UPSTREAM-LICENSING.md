@@ -15,4 +15,10 @@ The Seedbed OpenExperts integration began from [dylanmeyford/openexperts](https:
 | Seedbed-origin Installer, Guide, and navigation | Retained subject to normal contribution/publication review, with catalog/example paths revised to avoid referencing removed files. |
 | New `examples/b2b-decision/**` | Independently drafted, fictional, small example for topic-to-method navigation. No customer records. |
 
-This work avoids outreach and copying historical deleted package bodies. It does not independently establish a repository-wide outbound license. Legal must review exact-head text for similarity, source rights and attribution; Product must review navigation and continuity. A draft PR is neither permission to merge nor permission to advertise v1.
+## Proposed outbound license boundary
+
+Founder approved MIT for the Seedbed-controlled core and represented that Seedbed AI LLC owns or has sufficient authority to publish and license the identified Seedbed-origin material. The draft root [MIT LICENSE](../LICENSE) uses `Copyright (c) 2026 Seedbed AI LLC`; Legal must independently evaluate support for the holder and year, contribution rights, and notice scope before clearance. That declaration is not a finding about ownership of historical upstream material.
+
+For this proposed v1 tree, the intended MIT core covers `README.md`, `spec.md`, `CATALOG.md`, `install/**`, `guide/**`, `docs/PRODUCT-PRINCIPLES.md`, this provenance document's newly authored Seedbed text, and `examples/b2b-decision/**`, to the extent Seedbed owns or has authority over the relevant expression. Ordinary functional metadata such as `.gitignore` remains subject to its actual provenance, not presumed ownership. The core notice does **not** automatically extend to separately distributed expertise packages, customer-controlled task state/data, pre-remediation or historical Git revisions, or third-party material whose rights are unresolved. It does not alter previous notices or imply endorsement by the upstream publisher.
+
+This work avoids outreach and copying historical deleted package bodies. Legal must review the exact proposed tree, authorship, supported copyright notice and exclusions; Product must review navigation and continuity. Adding a draft license does not independently establish all rights, merge permission or advertised-release permission.

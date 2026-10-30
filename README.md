@@ -32,4 +32,4 @@ See [product principles](docs/PRODUCT-PRINCIPLES.md), [the Guide](guide/GUIDE.md
 
 ## Contribution and licensing status
 
-Proposed changes are reviewed through pull requests. No repository-wide outbound license or upstream copyright-holder identity is asserted by this document. Legal review of the proposed advertised source set is pending.
+**Core license selection:** The Founder approved the MIT License for Seedbed-controlled OpenExperts core material, subject to Legal validation of the holder/year notice and applicable contribution rights. The proposed license text is in [LICENSE](LICENSE). This draft contains independently authored core documentation, Installer, Guide, catalog, interoperability notes and fictional examples. Separately distributed expertise packages and customer-owned records are not licensed by this repository's core notice. Historical upstream content with unresolved rights is not retroactively licensed or endorsed. See [provenance and exact exclusions](docs/UPSTREAM-LICENSING.md). PR review, merge and advertised-release decisions remain separate.
