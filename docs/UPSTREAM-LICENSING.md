@@ -1,25 +1,24 @@
-# Upstream licensing and source provenance — factual notice
+# Upstream provenance and v1 remediation status
 
-This document records source and licensing **declarations**, not a legal determination that any copyright holder has granted all permissions needed for redistribution. It is not an authoritative `LICENSE` file, copyright notice for the whole repository, certification of title, or release clearance.
+**Status: Legal review pending.** This record is historical attribution and a rights-risk ledger, not a license grant, copyright ownership assertion, or advertised-release permission.
 
-## Source inspected
+The Seedbed OpenExperts integration began from [dylanmeyford/openexperts](https://github.com/dylanmeyford/openexperts/tree/91ebdd6444b6658d1cc509fc48ccf0a998c0d5fe), pinned at `91ebdd6444b6658d1cc509fc48ccf0a998c0d5fe`. The upstream README declared MIT and its public sales fixture manifest declared MIT with the descriptive author value `Openexperts Community`. A complete tree check identified no canonical `LICENSE`, `COPYING` or `NOTICE` file; historical examination did not establish a complete notice, rights holder, or contribution authorization. Those facts do not independently prove or disprove permission.
 
-- Upstream repository: https://github.com/dylanmeyford/openexperts
-- Pinned upstream source revision: [`91ebdd6444b6658d1cc509fc48ccf0a998c0d5fe`](https://github.com/dylanmeyford/openexperts/tree/91ebdd6444b6658d1cc509fc48ccf0a998c0d5fe).
-- At that revision, upstream [`README.md`](https://github.com/dylanmeyford/openexperts/blob/91ebdd6444b6658d1cc509fc48ccf0a998c0d5fe/README.md) contains a **License** heading with the declaration **MIT**.
-- The tracked [`experts/radiant-sales-expert-fixture/expert.yaml`](https://github.com/dylanmeyford/openexperts/blob/91ebdd6444b6658d1cc509fc48ccf0a998c0d5fe/experts/radiant-sales-expert-fixture/expert.yaml) declares `license: MIT` and `author: Openexperts Community`.
-- Independent inspection of the complete recursive upstream tree at this revision found **no tracked `LICENSE`, `COPYING`, or `NOTICE` file**. This observation is limited to that pinned snapshot; it does not establish what permissions may exist in communications, prior history, or other repositories.
+## Proposed source disposition
 
-## Rights and content boundaries
+| Source group | Treatment in remediation draft |
+| --- | --- |
+| Inherited root README and specification prose | Replaced by independently composed guidance and technical interoperability notes. Format names and interface facts remain descriptive. |
+| Inherited `experts/radiant-sales-expert-fixture/**` | Removed from proposed source tree; not relabeled or redistributed as the new example. |
+| Historical `experts/radiant-sales-expert` gitlink and `.gitmodules` | Removed as an unused and potentially misleading linked-source pointer. No historical content was imported. |
+| Inherited `.cursor/goals.mdc` | Removed; its original expressive instructions are not included in the proposed set. |
+| Seedbed-origin Installer, Guide, and navigation | Retained subject to normal contribution/publication review, with catalog/example paths revised to avoid referencing removed files. |
+| New `examples/b2b-decision/**` | Independently drafted, fictional, small example for topic-to-method navigation. No customer records. |
 
-An upstream README license label and a fixture manifest field are useful declarations. **Neither proves the identity or ownership of every copyright interest, authority to license third-party contributions, completeness of required copyright/permission notices, or the rights of historical linked materials.** The fixture's `author` value is a declaration, not independent proof of chain of title.
+## Proposed outbound license boundary
 
-The Seedbed-maintained integration branch also includes later, separately authored Installer, Guide, catalog, knowledge-index and other integration changes. Those additions **must not be assumed to share the same provenance or licensing grants merely because they are stored alongside inherited upstream files**. Their own contributor rights, attribution obligations and intended outbound license must be reviewed at the affected revisions.
+Founder approved MIT for the Seedbed-controlled core and represented that Seedbed AI LLC owns or has sufficient authority to publish and license the identified Seedbed-origin material. The draft root [MIT LICENSE](../LICENSE) uses `Copyright (c) 2026 Seedbed AI LLC`; Legal must independently evaluate support for the holder and year, contribution rights, and notice scope before clearance. That declaration is not a finding about ownership of historical upstream material.
 
-Historical `dylanmeyford/radiant-sales-expert` package files removed or absent from the pinned upstream tree have **not** been restored by this notice. This notice does not license or endorse those files and does not imply an upstream maintainer's endorsement of the Seedbed fork.
+For this proposed v1 tree, the intended MIT core covers `README.md`, `spec.md`, `CATALOG.md`, `install/**`, `guide/**`, `docs/PRODUCT-PRINCIPLES.md`, this provenance document's newly authored Seedbed text, and `examples/b2b-decision/**`, to the extent Seedbed owns or has authority over the relevant expression. Ordinary functional metadata such as `.gitignore` remains subject to its actual provenance, not presumed ownership. The core notice does **not** automatically extend to separately distributed expertise packages, customer-controlled task state/data, pre-remediation or historical Git revisions, or third-party material whose rights are unresolved. It does not alter previous notices or imply endorsement by the upstream publisher.
 
-## Remaining open question
-
-Before asserting that the integrated repository as a whole is definitively MIT-licensed, distributing a canonical MIT license notice on behalf of copyright holders, or promoting a release, obtain Legal's review of supported copyright ownership, permission grants, third-party attribution/notice coverage and any remaining upstream contribution conditions. Preserve existing declarations unchanged until those questions are resolved.
-
-This notice itself adds no permissions, restrictions, or runtime behavior; it is a factual provenance aid for review.
+This work avoids outreach and copying historical deleted package bodies. Legal must review the exact proposed tree, authorship, supported copyright notice and exclusions; Product must review navigation and continuity. Adding a draft license does not independently establish all rights, merge permission or advertised-release permission.

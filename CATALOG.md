@@ -1,14 +1,11 @@
-# OpenExperts expert catalog
+# OpenExperts — specialty catalog
 
-This compact catalog routes an AI to **specialties and package entry points**. A large collection may maintain smaller discipline catalogs linked from this root; do not expand the root into a giant file list or download a library before selecting expertise.
+Select a question before reading a topic, and read the smallest applicable method and reference documents. Entries are navigation pointers, not validated professional advice.
 
-| Specialty | Questions / use | Topic entry | Method entry | Publisher scope |
-| --- | --- | --- | --- | --- |
-| B2B sales qualification | Buyer authority, deal risks, approval gaps | [Sales topic index](experts/radiant-sales-expert-fixture/knowledge/INDEX.md) | [Determine next action](experts/radiant-sales-expert-fixture/functions/determine-next-action.md) | Public illustrative fixture |
-| Inbound sales workflow | Classify, draft and triage customer messages | [Sales topic index](experts/radiant-sales-expert-fixture/knowledge/INDEX.md) | [Inbound email triage](experts/radiant-sales-expert-fixture/processes/inbound-email-triage.md) | Public illustrative fixture |
+| Specialty | When to use | Topic index | Procedure |
+| --- | --- | --- | --- |
+| Fictional B2B buying decision | Unknown budget authority, delayed funding, unclear next commitment | [Buying-decision topics](examples/b2b-decision/INDEX.md) | [Evidence-based next step](examples/b2b-decision/NEXT-ACTION.md) |
 
-**How to navigate:** specialty → package `expert.yaml` as needed → bounded topic index → specific heading/source → relevant function/process/persona → further evidence when needed. Index summaries are navigation hints, **not** proof of underlying claims, tool availability or permissions.
+**Navigation:** catalog → topic index → chosen short reference → associated procedure → qualified conclusion. Read and cite the actual paths and immutable source revision. Do not preload all content.
 
-**Version/source:** All links refer to paths in this repository at the revision actually read. Record the real commit/release and `expert.yaml.version` separately; do not turn mutable branch names into immutable citations. These entries do not verify publisher identity or correctness. Customer storage is for versioned **work state**, not a mandatory mirror of published knowledge.
-
-**Maintenance:** Before changing a linked topic or method, check that labels, destinations and prerequisites still describe the actual target. Split large discipline catalogs or topic indexes when a reader would need to process unrelated entries. Never add customer-private contents to a public catalog.
+**Limits:** The current catalog contains an original fictional demonstration, not a certified expert or a production sales package. Store customer work state separately, with explicit permission and verified versioning. Source files do not connect tools or authorize actions.

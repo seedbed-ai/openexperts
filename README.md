@@ -1,139 +1,35 @@
-# Openexperts
+# OpenExperts
 
-**Professional expertise for AI agents.**
+OpenExperts is a file-based approach to giving an AI assistant access to professional reference material and reusable decision procedures. The current integration supports two distinct activities: navigating published expertise and maintaining customer-owned task state across conversations.
 
-OpenExperts is an open specification for packaging professional expertise -- the judgment, processes, and domain knowledge that professionals use daily -- into a format any AI agent framework can consume.
+**Development status:** This repository documents a proposed v1, not an advertised release or a verified universal runtime. The original source and unresolved license evidence are described in [upstream provenance](docs/UPSTREAM-LICENSING.md).
 
-## The Problem
+## Start with a task
 
-LLMs have capability, but not experience. For instance, they can write a follow up email, but they don't know when to send it, why they should multi-thread in Sarah, or that this prospect intially mentioned a competitor in a first email, and that their persistent quiet might mean a deal risk and to use a battle card. That judgment comes from years of professional practice performing and training in a role.
+Read [Installer](install/INSTALL.txt) for setup and [Guide](guide/GUIDE.md) for task continuation. The Installer identifies a customer-approved versioned state location, requests permission before writing, and verifies saved content through an independent read. The Guide retrieves the recorded source repository and immutable revision, then consults [the catalog](CATALOG.md) to find only the relevant guidance.
 
-Openexperts bridges that gap. It defines a standard way to capture professional expertise as portable, framework-agnostic packages that give AI agents the judgment and workflows of a seasoned professional.
+The source of published methods and the customer's task record are separate. Neither setup nor a published file grants access to external accounts.
 
-## Why not just Skills.MD?
+## Explore a professional example
 
-A skill tells an agent how to do a single task.
+The [fictional purchasing-decision example](examples/b2b-decision/INDEX.md) demonstrates progressive navigation from a specialty to a topic and an applicable procedure. It contains no customer records and no inherited sales-package files.
 
-A skill is like a set recipe — generate slides, post them, save, repeat. 
+For a fictional B2B opportunity where budget approval and economic-buyer identity are unknown, the example identifies which evidence is missing and how to structure a next contact without claiming purchasing authority or a closing date.
 
-With Experts, you're encoding an entire professional role that operates proactively and reactively across unpredictable situations.
+## Package and host interfaces
 
-An expert package can describe runtime coordination (triggers, concurrency and execution policy), selective context loading, knowledge, tool contracts, state and processes. **The package is documentation and metadata; any execution behavior requires a compatible host or framework.**
+[Technical interoperability notes](spec.md) describe the proposed file layout and optional manifest conventions for expert packages. Markdown and YAML can describe a method or a potential tool integration; reading them does not implement a trigger, connect a provider, or authorize actions. Features such as automated scheduling, concurrency and learning require separately implemented host behavior.
 
-You could write the world's best skill file for triaging one email. But you can't write a skill file that simultaneously listens for Gmail webhooks, runs a morning innbox review, handles Linkedin messages, enforces that CRM reads are auto-approved but email sends are draft-only, retries when an API fails mid-process, and tracks 50 active deals with entity-scoped concurrency.
+## Scope and limitations
 
-In other words: Skills are capabilities. Experts are colleagues.
+- The [catalog](CATALOG.md) and its indexes are navigation aids, not proof that a recommendation is correct.
+- Customer-owned persistence requires actual permitted storage, version checks, and post-write readback. Otherwise the Guide must label setup partial or manual-only.
+- A fresh chat must use the customer's saved immutable source locator; the latest branch is not a silent substitute.
+- Professional advice depends on retrieved sections and real task evidence. The example is fictional and does not certify a professional advisor.
+- External writes, email, CRM changes or transactions require present authorization and available host tools.
 
+See [product principles](docs/PRODUCT-PRINCIPLES.md), [the Guide](guide/GUIDE.md), and [the provenance and rights-status record](docs/UPSTREAM-LICENSING.md).
 
-## What's in an Expert Package?
+## Contribution and licensing status
 
-An expert package is a directory of markdown and YAML files:
-
-
-| Component        | Format            | Purpose                                                            |
-| ---------------- | ----------------- | ------------------------------------------------------------------ |
-| **Manifest**     | `expert.yaml`     | Package metadata, dependencies, triggers, policy, component listing |
-| **Orchestrator** | `orchestrator.md` | Entry point. How the agent should use this expert package.         |
-| **Persona**      | `persona/`        | Agent identity and behavioral rules                                |
-| **Functions**    | `functions/*.md`  | Individual capabilities (markdown instructions + YAML frontmatter) |
-| **Processes**    | `processes/*.md`  | Multi-step workflows that coordinate functions and tools           |
-| **Tools**        | `tools/*.yaml`    | Abstract interfaces to external systems                            |
-| **Knowledge**    | `knowledge/*.md`  | Reference material (methodologies, frameworks, guidelines)         |
-| **State**        | `state/*.md`      | Builder-defined local storage files the agent reads and writes     |
-| **Learnings**    | `learnings/*.md`  | Runtime-captured corrections and patterns that improve future runs |
-| **Scratch**      | `scratch/*.md`    | Runtime-generated working files for process resumption and audit   |
-
-Only `expert.yaml`, `orchestrator.md`, `functions/`, `persona/`, and `README.md` are required. Everything else is opt-in based on what the expertise demands.
-
-## How It Works
-
-### 1. Choose how to consume the expertise
-
-For a framework integration, an expert package is a directory of Markdown/YAML files that can be cloned, downloaded or copied into your project. The package contains no executable code; framework features and dependencies are separate. **For the lightweight conversational integration, follow [the Installer](install/INSTALL.txt) and [Guide](guide/GUIDE.md), which navigate published expertise remotely and progressively without requiring a local copy of the full library.**
-
-For a concrete illustration of the package structure, inspect the [in-repository sales-expertise fixture](experts/radiant-sales-expert-fixture/expert.yaml). This is an illustrative fixture, **not** a verified standalone installation or production-ready package. The original author's [radiant-sales-expert repository](https://github.com/dylanmeyford/radiant-sales-expert) is public, but its root contents were empty when checked on 2026-10-29; do not treat it as an independently verified installable package.
-
-### 2. Bind tools if your host supports them
-
-The package manifest can declare what tools it needs (e.g., `crm`, `email`, `calendar`). You map each abstract name to whatever you already have -- your HubSpot instance, your Nylas integration, your Google Calendar API. The expert package doesn't care how your tools work, only that they can answer the declared operations.
-
-```yaml
-# Example: binding abstract tools to your concrete implementations
-tools:
-  crm: my-hubspot-mcp-server
-  email: my-nylas-integration
-  calendar: my-google-calendar-api
-```
-
-### 3. A compatible framework may consume the package
-
-A framework that implements the relevant specification features can read package files and use them at runtime:
-
-- **Orchestrator** tells the agent when/how to use this expert package and which capabilities to reach for
-- **Persona** becomes the agent's system prompt
-- **Functions** become capabilities the agent can invoke
-- **Processes** orchestrate multi-step workflows across functions and tools
-- **Tools** declare what external systems the package needs — you bind them to your implementations
-- **Knowledge** becomes reference material loaded into context
-- **State** becomes local read/write storage — the builder decides what files exist, what they track, and how the agent uses them
-- **Learnings** capture approved observations and corrections over time, then feed that scoped context back into future runs
-- **Triggers** declare potential event-to-process mappings; a compatible framework must separately implement event delivery, concurrency, retries and failure handling
-
-### 4. Apply professional guidance to real evidence
-
-With relevant sources and permitted tool access, an assistant can use the package to reason about timing, stakeholders, applicable methods and next actions. Actual outcomes depend on the evidence, host implementation and authorized permissions; reading a package does not itself connect tools or execute actions.
-
-The manifest also declares a **policy** governing which tool operations the agent can execute autonomously (`auto`), which require human approval (`confirm`), and which it should only draft for the human to execute (`manual`). The package-format default for unknown operations is `confirm`, but **a package author cannot grant live tool access or override host/user authorization**. A compatible host must enforce approval and tool permissions independently.
-
-### No code in the package
-
-This is the key design choice. An expert package is a **prompt engineering artifact with structure**, not a software dependency. It contains expert instructions, data requirements, and process definitions -- all in human-readable markdown and YAML. Any framework can consume it:
-
-- Read the markdown directly as system prompts
-- Map functions to agent/skill definitions
-- Map processes to workflow chains
-- Map tools to your integration layer (MCP servers, API clients, database queries, etc.)
-
-## For Framework Authors
-
-The following are implementation responsibilities for framework authors, **not features supplied automatically by the Markdown/YAML package or the conversational Installer/Guide path**:
-
-To make your framework consume OpenExperts packages:
-
-1. **Parse and validate `expert.yaml`** — discover components, verify required fields and cross-reference integrity (see [Validation](spec.md#14-validation))
-2. **Load orchestrator and persona** into the agent's persistent context
-3. **Bind abstract tools** to your concrete implementations (MCP servers, API clients, etc.)
-4. **Wire triggers** — map `webhook`, `cron`, and `channel` triggers to your runtime's event system, applying concurrency policy (`parallel`, `serial`, `serial_per_key`)
-5. **Enforce approval policy** — resolve the effective tier for each tool operation using the [resolution order](spec.md#approval-tier-resolution-order), handle `confirm` approval flow and `manual` draft delivery
-6. **Support execution guarantees** — timeouts, retries with backoff, scratchpad-based resumption, and failure escalation
-7. **Support continuous learning** — capture proposed learnings, enforce learning approval, persist approved entries to `learnings/`, and inject scoped learnings into future function runs
-8. **Register functions and processes** as on-demand capabilities the agent can invoke
-
-See the full [specification](spec.md) for the complete runtime consumption model (section 13).
-
-## Specification
-
-The full specification is in [spec.md](spec.md).
-
-## Example Packages
-
-- [radiant-sales-expert fixture](experts/radiant-sales-expert-fixture/expert.yaml) -- illustrative B2B sales expertise for deal triage, next-best-action and qualification; not a certified or independently deployed package
-
-## Contributing
-
-openexperts is open source. To create your own expert package:
-
-1. Read the [specification](spec.md)
-2. Create a new repo following the directory structure
-3. Package your professional expertise as functions, processes, and knowledge
-4. Open a PR to add your package to the directory above
-
-For the pinned upstream licensing declarations, provenance and unresolved rights questions, see [Upstream licensing provenance](docs/UPSTREAM-LICENSING.md). This reference is not a definitive repository-wide licensing determination.
-
-## License
-
-MIT
-
-## Seedbed conversational integration
-
-For the customer-facing principles and tested limits of the lightweight Installer → Guide experience, see [Customer product principles](docs/PRODUCT-PRINCIPLES.md). The expert-package format and optional framework runtime capabilities are described separately in [the specification](spec.md).
+**Core license selection:** The Founder approved the MIT License for Seedbed-controlled OpenExperts core material, subject to Legal validation of the holder/year notice and applicable contribution rights. The proposed license text is in [LICENSE](LICENSE). This draft contains independently authored core documentation, Installer, Guide, catalog, interoperability notes and fictional examples. Separately distributed expertise packages and customer-owned records are not licensed by this repository's core notice. Historical upstream content with unresolved rights is not retroactively licensed or endorsed. See [provenance and exact exclusions](docs/UPSTREAM-LICENSING.md). PR review, merge and advertised-release decisions remain separate.
