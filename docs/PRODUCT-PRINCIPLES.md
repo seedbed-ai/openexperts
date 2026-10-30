@@ -1,6 +1,6 @@
 # OpenExperts — Customer product principles
 
-Status: Seedbed integration proposal. This describes customer experience, not a claim of complete implementation. `spec.md` defines the expert-package format; `install/INSTALL.txt` defines setup; `guide/GUIDE.md` defines conversational behavior.
+Status: GitHub-backed v1 release-candidate documentation for review; no advertised release or full implementation claim. `spec.md` defines the expert-package format; `install/INSTALL.txt` defines setup; `guide/GUIDE.md` defines conversational behavior.
 
 ## Purpose
 
@@ -19,7 +19,7 @@ Make professional methods, judgment and reference knowledge usable by a general 
 
 ## Demonstrated and not demonstrated
 
-The bounded fresh-chat sales-fixture test demonstrated state recovery, pinned Guide/catalog navigation and a provisional next-action recommendation. It did not establish certified professional expertise, production reliability, provider-wide compatibility, automated triggers, CRM execution or unattended state synchronization.
+The accepted bounded GitHub-backed customer-path test demonstrated one authorized fictional task update, independent GitHub readback, fresh-conversation recovery of the updated fact, and pinned Guide/catalog navigation supporting a qualified next action. It did not establish unassisted first-time Installer setup, conflict/refusal or missing-source handling, certified professional expertise, production reliability, provider-wide compatibility, automated triggers, CRM execution or unattended state synchronization. Historical tests using removed inherited fixtures are not evidence of the present fictional example's independent execution.
 
 ## Document ownership
 
